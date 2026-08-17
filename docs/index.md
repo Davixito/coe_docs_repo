@@ -1,8 +1,8 @@
-# COE Documentation Library
+# APC Documentation Library
 
 Master table of contents, generated from the Procedure Table of Contents tracker.
 
-**Content status:** All 9 Administrative Procedures are populated with the real procedure text from the documents you shared, linked to the published files in `docs/administrative-procedures/`. Three SOPs (APC-SOP-303, 304, 306) are written from real source material you uploaded — see the **Status** column on each table below. Every other SOP, Standard, Template, and Checklist has been filled with an auto-generated skeleton (marked with a 🧩 banner inside each file) so the tracker has no empty entries, but none of it has been authored or reviewed by a process owner yet.
+**Content status:** All 9 Administrative Procedures are populated with the real procedure text from the documents you shared, linked to the published files in `docs/administrative-procedures/`. Four SOPs (APC-SOP-041, 303, 304, 306) are written from real source material you uploaded — see the **Status** column on each table below. Every other SOP, Standard, Template, and Checklist has been filled with an auto-generated skeleton (marked with a 🧩 banner inside each file) so the tracker has no empty entries, but none of it has been authored or reviewed by a process owner yet.
 
 **Status legend:**
 
@@ -53,7 +53,7 @@ Master table of contents, generated from the Procedure Table of Contents tracker
 | --- | --- | --- |
 | APC-SOP-301 | [Data Pipeline Development Procedure](sops/apc-sop-301-data-pipeline-development-procedure.md) | Draft |
 | APC-SOP-302 | [Data Validation Procedure](sops/apc-sop-302-data-validation-procedure.md) | Draft |
-| APC-SOP-303 | [Semantic Model Development Procedure](sops/apc-sop-303-semantic-model-development-procedure.md) | Published (Draft status in doc metadata) |
+| APC-SOP-303 | [Semantic Model Development Procedure](sops/apc-sop-303-semantic-model-development-procedure.md) | Published — Rev 1 (Draft status in doc metadata, unconfirmed) |
 | APC-SOP-304 | [Dashboard Development Procedure](sops/apc-sop-304-dashboard-development-procedure.md) | Draft — not yet issued |
 | APC-SOP-305 | [KPI Development Procedure](sops/apc-sop-305-kpi-development-procedure.md) | Draft |
 | APC-SOP-306 | [Documentation Procedure (In-Report)](sops/apc-sop-306-documentation-procedure-in-report.md) | Published |
@@ -75,7 +75,7 @@ Master table of contents, generated from the Procedure Table of Contents tracker
 | ID | SOP | Status |
 | --- | --- | --- |
 | APC-SOP-040 | [Release Management Procedure](sops/apc-sop-040-release-management-procedure.md) | Draft |
-| APC-SOP-041 | [Production Deployment Procedure](sops/apc-sop-041-production-deployment-procedure.md) | Draft |
+| APC-SOP-041 | [Production Deployment Procedure](sops/apc-sop-041-production-deployment-procedure.md) | Draft — not yet issued |
 | APC-SOP-042 | [Production Validation Procedure](sops/apc-sop-042-production-validation-procedure.md) | Draft |
 | APC-SOP-043 | [Release Communication Procedure](sops/apc-sop-043-release-communication-procedure.md) | Draft |
 | APC-SOP-044 | [Hypercare Procedure](sops/apc-sop-044-hypercare-procedure.md) | Draft |
