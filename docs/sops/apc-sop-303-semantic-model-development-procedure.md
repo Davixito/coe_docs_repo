@@ -1,8 +1,10 @@
 # Semantic Model Development Procedure
 
-**Procedure ID:** APC-SOP-303 | **Document Type:** Standard Operating Procedure (SOP) | **Process Owner:** BI Analytics Team (BI) | **Lifecycle Phase:** Phase 3 – Develop (APC-PHASE-003) | **Status:** Draft — Rev 0
+**Procedure ID:** APC-SOP-303 | **Document Type:** Standard Operating Procedure (SOP) | **Process Owner:** BI Analytics Team (BI) | **Lifecycle Phase:** Phase 3 – Develop (APC-PHASE-003) | **Status:** Draft — Rev 1 *(unconfirmed — see note below)*
 
-> This document carries a **Draft** status in its own document-control metadata, even though its content is fully written (no open placeholders in the body). Treat it as review-ready rather than fully ratified until Analytics Leadership formally issues it.
+> **Editorial note on this update (Rev 1):** This file was updated from a newly uploaded revision of the source document. The new source adds the five connection-pattern diagrams now embedded in Section 6, and the step numbering in Section 5 was tightened up — content is otherwise unchanged from Rev 0.
+>
+> The new source also **no longer includes** the document-control metadata block (Document Type / Process Owner / Lifecycle Phase / Status) or Sections 9–13 (Related Procedures, Related Standards, Related Templates, Related Checklists, Open APC Decisions), and the header now reads with no explicit status line. It's unclear whether that's a deliberate simplification of the published procedure or content that was dropped by accident while editing — the Revisions section in the new upload still says "14" even though only 8 numbered sections remain before it, which points toward an editing artifact rather than a clean intentional restructure. **To avoid silently losing information, this version carries the Section 9–13 content and the metadata block forward unchanged from the previous release.** Please confirm whether that's correct, or tell me to drop them, next time we're in the docs together.
 
 [← Back to documentation index](../index.md)
 
@@ -228,6 +230,8 @@ The following patterns describe accepted approaches for connecting Gold layer da
 
 A report connects directly to a Lakehouse or Warehouse (Import or Live) with its semantic model embedded inside the report file, rather than published as an independent, shared semantic model.
 
+![Pattern 1: a Lakehouse in the Store stage connects directly (Import/Live) to a Report and its embedded Semantic Model in the Report production stage, with no independent shared model.](assets/apc-sop-303/pattern-1-embedded-report.png)
+
 **Why discouraged:** no reuse across reports; every report re-implements its own measures and relationships, risking inconsistent KPI logic; the model cannot be centrally governed, secured (RLS/OLS), or certified as a shared asset.
 
 **When it may still occur:** rapid prototyping or a genuinely one-off, single-report analysis with no expected reuse. Any report built this way must not be promoted to Prod or certified without first extracting an independent semantic model.
@@ -236,17 +240,23 @@ A report connects directly to a Lakehouse or Warehouse (Import or Live) with its
 
 One or more Gold sources (Lakehouse/Warehouse, Import) feed a single certified semantic model. Multiple reports connect Live to that one model.
 
+![Pattern 2: Lakehouse and Warehouse sources Import into a single Semantic Model, which serves multiple reports (Report 1, Report 2) via a Live connection.](assets/apc-sop-303/pattern-2-single-master-model.png)
+
 **Use when:** a single domain or subject area with one governed data asset serves all related reporting needs.
 
 #### Pattern 3 — Certified Semantic Models, Reusable Domain-Specific Assets (Preferred — Multi-Domain)
 
 Each domain (e.g., Supply Chain Mart, Finance Mart) has its own certified semantic model, each fed by its own Gold source(s). Each model serves one or more reports via a Live connection.
 
+![Pattern 3: two independently certified semantic models, each fed by its own Gold source, each serving one or more reports via a Live connection.](assets/apc-sop-303/pattern-3-domain-specific-models.png)
+
 **Use when:** multiple distinct business domains exist, each warranting its own conformed, independently owned semantic model. This is the default target-state pattern for the APC library.
 
 #### Pattern 4 — Certified Semantic Models, Cross-Functional / Composite (Approved Exception)
 
 A cross-functional report needs data spanning more than one certified domain semantic model. Connect using a composite model — DirectQuery to Power BI semantic models (semantic model chaining) — combining two or more certified models, optionally supplemented with a small local table.
+
+![Pattern 4: two certified semantic models feed a report via a Composite connection, chaining Semantic Model 1 and Semantic Model 2 into a shared report alongside their individual Live connections.](assets/apc-sop-303/pattern-4-composite-chained-models.png)
 
 Governance requirements:
 
@@ -261,6 +271,8 @@ Governance requirements:
 A Lakehouse table connects to a semantic model via Direct Lake mode over the SQL Analytics Endpoint / OneLake, avoiding a full Import refresh while retaining near-Import query performance.
 
 **Use when:** near-real-time freshness on large Lakehouse tables is required and Fabric capacity supports Direct Lake. Validate fallback-to-DirectQuery behavior and calculated column/table constraints before promoting to Prod.
+
+![Direct Lake pattern: Lakehouse and Warehouse sources connect via DirectQuery, Import, and Direct Lake into two semantic models, which serve two reports via Live and Composite connections routed through the SQL Analytics Endpoint.](assets/apc-sop-303/direct-lake-pattern.png)
 
 **Open item:** the composite connection type for cross-functional chaining (Pattern 4) has not yet been ratified as a formal APC standard. This SOP designates DirectQuery to Power BI semantic models (chained composite models) as the interim approved method pending a formal APC decision — see Section 13, Open APC Decisions.
 
@@ -289,6 +301,8 @@ This procedure may produce:
 
 ## 9. Related Procedures
 
+*(Carried forward from the previous version — see editorial note at the top of this file.)*
+
 | Procedure ID | Procedure Name |
 | --- | --- |
 | APC-SOP-301 | Data Pipeline Development Procedure |
@@ -299,6 +313,8 @@ This procedure may produce:
 | APC-SOP-307 | UAT Scenario Development Procedure |
 
 ## 10. Related Standards
+
+*(Carried forward from the previous version — see editorial note at the top of this file.)*
 
 | Standard ID | Standard Name |
 | --- | --- |
@@ -313,6 +329,8 @@ This procedure may produce:
 
 ## 11. Related Templates
 
+*(Carried forward from the previous version — see editorial note at the top of this file.)*
+
 | Template ID | Template Name |
 | --- | --- |
 | APC-TMP-012 | Semantic Model Documentation Template |
@@ -323,6 +341,8 @@ This procedure may produce:
 
 ## 12. Related Checklists
 
+*(Carried forward from the previous version — see editorial note at the top of this file.)*
+
 | Checklist ID | Checklist Name |
 | --- | --- |
 | APC-CHK-011 | Documentation Completeness Checklist |
@@ -330,6 +350,8 @@ This procedure may produce:
 | APC-CHK-[PENDING] | RLS / OLS Validation Checklist |
 
 ## 13. Open APC Decisions
+
+*(Carried forward from the previous version — see editorial note at the top of this file.)*
 
 The following unresolved APC decisions may impact execution of this procedure.
 
@@ -354,6 +376,7 @@ Final certification criteria specific to semantic models (as distinct from repor
 | Issue Date | Rev | Change | Written / Revised by |
 | --- | --- | --- | --- |
 |  | 0 | Initial Release |  |
+| 2026-08-17 | 1 | Added the five connection-pattern diagrams to Section 6 (Pattern 1–4 + Direct Lake); tightened Section 5 step numbering. Source upload for this revision no longer included the document-control metadata block or Sections 9–13 — those sections are carried forward unchanged from Rev 0 pending confirmation. |  |
 |  |  |  |  |
 
 Remove the yellow highlight from previous versions of the document when making changes. Then highlight all new document changes in yellow for quick reference. An original issue document will have no highlights.
