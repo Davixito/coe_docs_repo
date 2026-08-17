@@ -2,9 +2,6 @@
 
 **Procedure ID:** APC-SOP-303 | **Document Type:** Standard Operating Procedure (SOP) | **Process Owner:** BI Analytics Team (BI) | **Lifecycle Phase:** Phase 3 – Develop (APC-PHASE-003) | **Status:** Draft — Rev 1 *(unconfirmed — see note below)*
 
-> **Editorial note on this update (Rev 1):** This file was updated from a newly uploaded revision of the source document. The new source adds the five connection-pattern diagrams now embedded in Section 6, and the step numbering in Section 5 was tightened up — content is otherwise unchanged from Rev 0.
->
-> The new source also **no longer includes** the document-control metadata block (Document Type / Process Owner / Lifecycle Phase / Status) or Sections 9–13 (Related Procedures, Related Standards, Related Templates, Related Checklists, Open APC Decisions), and the header now reads with no explicit status line. It's unclear whether that's a deliberate simplification of the published procedure or content that was dropped by accident while editing — the Revisions section in the new upload still says "14" even though only 8 numbered sections remain before it, which points toward an editing artifact rather than a clean intentional restructure. **To avoid silently losing information, this version carries the Section 9–13 content and the metadata block forward unchanged from the previous release.** Please confirm whether that's correct, or tell me to drop them, next time we're in the docs together.
 
 [← Back to documentation index](../index.md)
 
