@@ -2,7 +2,6 @@
 
 **Procedure ID:** APC-SOP-041 | **Document Type:** Standard Operating Procedure (SOP) | **Process Owner:** BI Analytics Team (BI) & Data Engineering Team (DE) — joint | **Lifecycle Phase:** Phase 5 – Deploy (APC-PHASE-005) | **Status:** Draft — Initial Release, pending APC ratification
 
-> **Editorial note:** This procedure was authored from the BI Center of Excellence's "CI/CD in Microsoft Fabric" working session (August 2026) and from Microsoft Learn — *Manage the Fabric deployment lifecycle*. It documents the four CI/CD deployment patterns available in Microsoft Fabric and the team's current thinking on when to use each one. The Deploy Phase Procedure (APC-AP-500, Section 12) lists **APC-OD-002: CI/CD Strategy** as an open APC decision — "a formal CI/CD strategy and deployment governance model have not yet been approved." This SOP represents the COE BI team's working recommendation and should be treated as the working draft that resolves that open decision, not as ratified governance, until the APC formally approves it.
 
 [← Back to documentation index](../index.md)
 
