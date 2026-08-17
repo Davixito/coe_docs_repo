@@ -2,7 +2,7 @@
 
 Master table of contents, generated from the Procedure Table of Contents tracker.
 
-**Content status:** All 9 Administrative Procedures are populated with the real procedure text from the documents you shared, linked to the published files in `docs/administrative-procedures/`. Four SOPs (APC-SOP-041, 303, 304, 306) are written from real source material you uploaded — see the **Status** column on each table below. Every other SOP, Standard, Template, and Checklist has been filled with an auto-generated skeleton (marked with a 🧩 banner inside each file) so the tracker has no empty entries, but none of it has been authored or reviewed by a process owner yet.
+**Content status:** All 9 Administrative Procedures are populated with the real procedure text from the documents you shared, linked to the published files in `docs/administrative-procedures/`. Five SOPs (APC-SOP-041, 203, 303, 304, 306) are written from real source material you uploaded — see the **Status** column on each table below. Every other SOP, Standard, Template, and Checklist has been filled with an auto-generated skeleton (marked with a 🧩 banner inside each file) so the tracker has no empty entries, but none of it has been authored or reviewed by a process owner yet.
 
 **Status legend:**
 
@@ -43,7 +43,7 @@ Master table of contents, generated from the Procedure Table of Contents tracker
 | --- | --- | --- |
 | APC-SOP-201 | [Business Requirements Development Procedure](sops/apc-sop-201-business-requirements-development-procedure.md) | Draft |
 | APC-SOP-202 | [Technical Specification Procedure](sops/apc-sop-202-technical-specification-procedure.md) | Draft |
-| APC-SOP-203 | [Architecture Design Procedure](sops/apc-sop-203-architecture-design-procedure.md) | Draft |
+| APC-SOP-203 | [Architecture Design Procedure](sops/apc-sop-203-architecture-design-procedure.md) | Draft — not yet issued |
 | APC-SOP-204 | [Data Modeling Procedure](sops/apc-sop-204-data-modeling-procedure.md) | Draft |
 | APC-SOP-205 | [Semantic Model Design Procedure](sops/apc-sop-205-semantic-model-design-procedure.md) | Draft |
 
